@@ -26,10 +26,12 @@ public class BasicCalculator {
     }
 
     public Long div(Long number1, Long number2) {
+        Long result = null;
         if(number2 == 0) {
             logger.error("number2 cannot be 0");
         }
+        result = number1 / number2;
         logger.info( "Dividing {} + {}", number1, number2 );
-        return number1 + number2;
+        return result;
     }
 }

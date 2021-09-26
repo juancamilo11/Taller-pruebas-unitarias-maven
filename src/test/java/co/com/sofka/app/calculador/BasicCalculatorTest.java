@@ -55,4 +55,20 @@ public class BasicCalculatorTest {
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
 
+    @DisplayName("Testing several mults")
+    @ParameterizedTest(name = "{0} + {1} = {2}")
+    @CsvSource({
+            "10, 1,   10",
+            "1,  3,   3",
+            "-5, 1,   -5",
+            "1,  -10, -10",
+            "0,  15,  0",
+            "20, 0,   0",
+            "0,  -10, 0",
+            "0,  0,   0",
+    })
+    public void severalMults(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.mult(first, second),
+                () -> first + " + " + second + " should equal " + expectedResult);
+    }
 }
