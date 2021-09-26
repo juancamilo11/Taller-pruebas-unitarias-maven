@@ -38,4 +38,21 @@ public class BasicCalculatorTest {
         assertEquals(expectedResult, basicCalculator.sum(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
+
+    @DisplayName("Testing several subs")
+    @ParameterizedTest(name = "{0} + {1} = {2}")
+    @CsvSource({
+            "0,   1,  -1",
+            "10,  3,   7",
+            "49,  49,  0",
+            "0,   0,   0",
+            "10,  -15, 25",
+            "-20, -60, 40",
+            "0,   -10, 10",
+    })
+    public void severalSubs(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.sub(first, second),
+                () -> first + " + " + second + " should equal " + expectedResult);
+    }
+
 }
