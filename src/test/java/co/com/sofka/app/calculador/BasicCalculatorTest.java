@@ -96,4 +96,6 @@ public class BasicCalculatorTest {
             logger.error("Error due to division by zero " + e.getMessage());
         }
     }
+
+
 }
